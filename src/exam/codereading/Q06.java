@@ -18,6 +18,6 @@ public class Q06 {
 		//Use the substitution method to show the result of the
 		//following:
 		
-		f(3);
+		System.out.println(f(3));
 	}
 }

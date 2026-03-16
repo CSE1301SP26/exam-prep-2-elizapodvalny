@@ -5,7 +5,21 @@ import edu.princeton.cs.introcs.StdDraw;
 public class Q01 {
 
 	public static void recursiveCarpet ( double xCtr , double yCtr , double halfLength ) {
-		//your code here
+		if(halfLength < 0.01) {
+			return;
+		} else {
+		StdDraw.filledSquare(xCtr,yCtr,halfLength);
+		double newHalfLength = halfLength *2;
+		StdDraw.filledSquare(xCtr+newHalfLength, yCtr + newHalfLength, halfLength/3);
+		recursiveCarpet(xCtr+newHalfLength, yCtr + newHalfLength, halfLength/3);
+		StdDraw.filledSquare(xCtr-newHalfLength, yCtr+newHalfLength, halfLength/3);
+		recursiveCarpet(xCtr-newHalfLength, yCtr+newHalfLength, halfLength/3);
+		StdDraw.filledSquare(xCtr+newHalfLength, yCtr-newHalfLength, halfLength/3);
+		recursiveCarpet(xCtr+newHalfLength, yCtr-newHalfLength, halfLength/3);
+		StdDraw.filledSquare(xCtr-newHalfLength, yCtr-newHalfLength, halfLength/3);
+		recursiveCarpet(xCtr-newHalfLength, yCtr-newHalfLength, halfLength/3);
+		}
+		
 	}
 
 	public static void main(String[] args) {
@@ -14,7 +28,7 @@ public class Q01 {
 
 		//Your solution must use recursion
 
-		double halfCarpetLength = 0.25 ;
+		double halfCarpetLength = 0.15 ;
 		recursiveCarpet ( 0.5 , 0.5 , halfCarpetLength ) ;
 	}
 
