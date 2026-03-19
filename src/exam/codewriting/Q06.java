@@ -25,7 +25,19 @@ public class Q06 {
 	//You should use a helper method as part of your recursive implementation.
 	
 	public static double sqrtR( double x) {
-		return 0; //fix me
+		double xOld = x;
+		double xNew = x/2;
+		return babylonian(xOld,xNew, x); //fix me
+	}
+
+	public static double babylonian( double xOld, double xNew, double x) {
+		if (Math.abs(xOld-xNew)<0.001) {
+			return xNew;
+		} else {
+		xOld = xNew;
+		xNew = (xNew + (x/xNew))/2;
+		return babylonian (xOld,xNew,x);
+		}
 	}
 
 

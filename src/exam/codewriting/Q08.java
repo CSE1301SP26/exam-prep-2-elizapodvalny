@@ -24,16 +24,24 @@ public class Q08 {
 	 */
 
 	public static int[] countValues (int[][] a, int findMe ) {
-		return new int[0]; //fix me
+		int counts [] = new int [a[0].length];
+		for (int i = 0; i<a.length;i++){
+			for (int j = 0; j<a[0].length; j++) {
+				if (a[i][j] == findMe) {
+				counts[j] = counts[j] +1;
+			}
+			}
+			
+		}
+		return counts;
 	}
-
 	public static void main ( String[] args ) {
 		int [][] a = {
 				{1, 2, 4},
 				{3, 4, 1},
 				{1, 7, 7}
 		};
-		int[] answer = countValues(a, 1);
+		int[] answer = countValues(a, 2);
 		for(int i : answer) {
 			System.out.println(i);
 		}

@@ -14,6 +14,6 @@ public class Q09 {
 		//Use the substitution method to show the evaluation of
 		//the following:
 		
-		fun(4);
+		System.out.println(fun(4));
 	}
 }

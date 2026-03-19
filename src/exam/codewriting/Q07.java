@@ -15,12 +15,17 @@ public class Q07 {
 	*/
 	
 	public static int rollingSum (int n ) {
-		return 0; //fix me
+		if (n <= 1) {
+			return n;
+		} else {
+			return rollingSum(n-1) + n;
+		}
 	}
 	
 	public static void main ( String[] args ) {
 		System.out.println(rollingSum(5)); //should be 15
 		System.out.println(rollingSum(3)); //should be 6
+		System.out.println(rollingSum(2));
 	}
 
 }
